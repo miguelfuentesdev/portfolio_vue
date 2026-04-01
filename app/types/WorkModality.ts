@@ -1,0 +1,1 @@
+export type WorkModality = 'remote' | 'in-person' | 'hybrid';

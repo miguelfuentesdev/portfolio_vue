@@ -1,0 +1,33 @@
+{
+  "sections": [
+    {
+      "title": "Acerca de mí",
+      "id": "about"
+    },
+    {
+      "title": "Habilidades",
+      "id": "skills"
+    },
+    {
+      "title": "Experiencia",
+      "id": "experience"
+    },
+    {
+      "title": "Proyectos",
+      "id": "projects"
+    },
+    {
+      "title": "Educación",
+      "id": "education"
+    },
+    {
+      "title": "Contacto",
+      "id": "contact"
+    }
+  ],
+  "modality": {
+    "remote": "Remoto",
+    "in-person": "Presencial",
+    "hybrid": "Híbrido"
+  }
+}

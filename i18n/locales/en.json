@@ -1,0 +1,33 @@
+{
+  "sections": [
+    {
+      "title": "About Me",
+      "id": "about"
+    },
+    {
+      "title": "Skills",
+      "id": "skills"
+    },
+    {
+      "title": "Experience",
+      "id": "experience"
+    },
+    {
+      "title": "Projects",
+      "id": "projects"
+    },
+    {
+      "title": "Education",
+      "id": "education"
+    },
+    {
+      "title": "Contact",
+      "id": "contact"
+    }
+  ],
+  "modality": {
+    "remote": "Remote",
+    "in-person": "On-site",
+    "hybrid": "Hybrid"
+  }
+}
