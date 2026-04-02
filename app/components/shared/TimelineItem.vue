@@ -13,7 +13,7 @@ defineProps<{
       <span class="timeline-node h-5 w-5 rounded-full border-4 border-text bg-primary" />
     </div>
 
-    <div class="pb-12 flex flex-col gap-4">
+    <div class="pb-12 flex flex-col gap-4" :class="isLast && '!pb-0'">
       <div class="flex flex-row justify-between items-center">
         <div class="flex flex-col gap-2">
           <h3 class="text-2xl font-bold text-text">

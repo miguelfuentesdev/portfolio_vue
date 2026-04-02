@@ -2,7 +2,7 @@
 import type { EducationSection as EducationSectionEntity } from "~/domain/entities/home-page";
 import type { TimelineEntry } from "~/types/TimelineEntry";
 import { formatMonthYear } from "~/utils/date";
-
+import { useInView } from '~/composables/useInView';
 const props = defineProps<{
   educationSection: EducationSectionEntity;
 }>();
@@ -16,10 +16,11 @@ const timelineItems = computed<TimelineEntry[]>(() =>
     bullets: education.paragraphs,
   })),
 );
+const { targetRef, inView } = useInView();
 </script>
 
 <template>
-  <section id="education">
+  <section id="education" ref="targetRef" class="reveal reveal-up" :class="{ 'reveal-visible': inView }">
     <SectionTitle :title="educationSection.title" />
     <div ref="timelineRef" class="relative">
       <div

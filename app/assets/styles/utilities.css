@@ -1,0 +1,28 @@
+/* Scroll reveal animations */
+
+.reveal {
+  opacity: 0;
+  transition: opacity 600ms ease-out, transform 600ms ease-out;
+  will-change: opacity, transform;
+}
+
+.reveal-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) !important;
+}
+
+.reveal-up {
+  transform: translate3d(0, 24px, 0);
+}
+
+.reveal-down {
+  transform: translate3d(0, -24px, 0);
+}
+
+.reveal-left {
+  transform: translate3d(-24px, 0, 0);
+}
+
+.reveal-right {
+  transform: translate3d(24px, 0, 0);
+}
