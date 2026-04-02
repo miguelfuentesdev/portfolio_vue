@@ -10,6 +10,7 @@ export interface HomePage {
   experience: ExperienceSection;
   projects: ProjectsSection;
   education: EducationSection;
+  contact: ContactSection;
 }
 
 export interface SkillsSection {
@@ -34,4 +35,9 @@ export interface EducationSection {
   title: string
   sectionId: string
   items: Education[]
+}
+
+export interface ContactSection {
+  title: string;
+  description: string | null;
 }

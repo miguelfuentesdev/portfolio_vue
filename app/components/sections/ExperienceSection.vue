@@ -8,12 +8,13 @@ const props = defineProps<{
 }>();
 
 const { timelineRef, progress, lineTop, lineHeight } = useTimelineProgress();
+const { t } = useI18n();
 const timelineItems = computed<TimelineEntry[]>(() =>
   props.experienceSection.items.map((experience) => ({
     title: experience.role,
     subtitle: experience.company,
     period: `${formatMonthYear(experience.startDate)} - ${formatMonthYear(experience.endDate) ?? "Presente"}`,
-    meta: experience.modality,
+    meta: t(`modality.${experience.modality}`),
     bullets: experience.paragraphs,
   })),
 );

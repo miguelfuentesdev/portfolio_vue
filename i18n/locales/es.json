@@ -1,4 +1,6 @@
 {
+  "loading": "Cargando...",
+  "error": "Ocurrió un error al cargar la página.",
   "sections": [
     {
       "title": "Acerca de mí",
@@ -29,5 +31,13 @@
     "remote": "Remoto",
     "in-person": "Presencial",
     "hybrid": "Híbrido"
+  },
+  "form": {
+    "email": "Correo electrónico",
+    "message": "Mensaje",
+    "email_placeholder": "Escribe tu correo electrónico",
+    "message_placeholder": "Mándame un mensaje",
+    "submit": "Enviar",
+    "success": "Se ha mandado su correo correctamente."
   }
 }

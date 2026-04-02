@@ -3,6 +3,11 @@ import { StrapiHomePageRepository } from "~/infrastructure/repositories/strapi-h
 
 export function useHomePage() {
   const repository = new StrapiHomePageRepository();
+  const { locale } = useI18n();
 
-  return useAsyncData('home-page', () => getHomePage(repository));
+  return useAsyncData(
+    () => `home-page-${locale.value}`,
+    () => getHomePage(repository, locale.value),
+    { watch: [locale] }
+  );
 }

@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const { data: homePage, pending, error } = useHomePage();
+const { t } = useI18n();
 
 useHead({
   title: 'Miguel Fuentes | Software Engineer',
@@ -14,8 +15,8 @@ useHead({
 
 <template>
   <div>
-    <div v-if="pending">Cargando...</div>
-    <div v-else-if="error">Ocurrió un error al cargar la página.</div>
+    <div v-if="pending">{{ t('loading') }}</div>
+    <div v-else-if="error">{{ t('error') }}</div>
 
     <template v-else-if="homePage">
       <HomeHeroSection :about="homePage.about" />
@@ -23,6 +24,7 @@ useHead({
       <ExperienceSection :experience-section="homePage.experience" />
       <ProjectsSection :projects-section="homePage.projects" />
       <EducationSection :education-section="homePage.education" />
+      <ContactSection :contact-section="homePage.contact" />
     </template>
   </div>
 </template>

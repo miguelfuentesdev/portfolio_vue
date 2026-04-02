@@ -4,8 +4,8 @@ import { fetchStrapiHomePage } from "../api/strapi-client";
 import { mapHomePageResponse } from "../mappers/home-page.mapper";
 
 export class StrapiHomePageRepository implements HomePageRepository {
-  async getHomePage(): Promise<HomePage> {
-    const response = await fetchStrapiHomePage();
+  async getHomePage(locale: string): Promise<HomePage> {
+    const response = await fetchStrapiHomePage(locale);
     return mapHomePageResponse(response);
   }
 }

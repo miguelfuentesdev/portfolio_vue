@@ -1,4 +1,5 @@
 import type { StrapiAboutDto } from "./sections/strapi-about.dto";
+import type { StrapiContactDto } from "./sections/strapi-contact.dto";
 import type { StrapiEducationSectionDto } from "./sections/strapi-education.dto";
 import type { StrapiExperienceSectionDto } from "./sections/strapi-experience.dto";
 import type { StrapiProjectsSectionDto } from "./sections/strapi-projects.dto";
@@ -15,4 +16,5 @@ export interface StrapiHomePageDto {
   experience: StrapiExperienceSectionDto;
   projects: StrapiProjectsSectionDto;
   education: StrapiEducationSectionDto;
+  contact: StrapiContactDto;
 }

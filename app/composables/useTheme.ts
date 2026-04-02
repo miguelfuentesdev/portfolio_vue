@@ -3,7 +3,11 @@ import type { AppTheme } from "~/types/AppTheme";
 const THEME_STORAGE_KEY = 'portfolio-theme';
 
 export function useTheme() {
-  const theme = useState<AppTheme>('theme', () => 'light');
+  const themeCookie = useCookie<AppTheme>("theme", {
+    default: () => 'light',
+  });
+  
+  const theme = useState<AppTheme>('theme', () => themeCookie.value ?? 'light');
   
   function getSystemTheme(): AppTheme {
     if (!import.meta.client) {
@@ -15,25 +19,31 @@ export function useTheme() {
 
   function applyTheme(value: AppTheme) {
     theme.value = value;
+    themeCookie.value = value;
 
     if (!import.meta.client) {
       return;
     }
 
     document.documentElement.setAttribute('data-theme', value);
-    document.documentElement.classList.toggle("dark", value === "dark");
-    localStorage.setItem(THEME_STORAGE_KEY, value);
+    document.documentElement.classList.toggle('dark', value === 'dark');
   }
 
   function initializeTheme() {
-    if (!import.meta.client) {
-      return;
+    const cookieTheme = themeCookie.value;
+
+    if (cookieTheme) {
+      theme.value = cookieTheme;
+    } else {
+      const resolvedTheme = getSystemTheme();
+      theme.value = resolvedTheme;
+      themeCookie.value = resolvedTheme;
     }
-
-    const storedTheme = localStorage.getItem(THEME_STORAGE_KEY) as AppTheme | null;
-    const resolvedTheme = storedTheme ?? getSystemTheme();
-
-    applyTheme(resolvedTheme);
+  
+    if (import.meta.client) {
+      document.documentElement.setAttribute("data-theme", theme.value);
+      document.documentElement.classList.toggle("dark", theme.value === "dark");
+    }  
   }
 
   function toggleTheme() {

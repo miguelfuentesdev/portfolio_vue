@@ -2,7 +2,7 @@ import type { Experience } from "~/domain/entities/experience";
 import type { StrapiRichTextBlockDto } from "../api/dto/shared/strapi-rich-text-block.dto";
 import type { StrapiMediaDto } from "../api/dto/shared/strapi-media.dto";
 import type { ImageAsset } from "~/domain/entities/image-asset";
-import type { EducationSection, ExperienceSection, HomePage, ProjectsSection, SkillsSection } from "~/domain/entities/home-page";
+import type { ContactSection, EducationSection, ExperienceSection, HomePage, ProjectsSection, SkillsSection } from "~/domain/entities/home-page";
 import type { StrapiEducationDto, StrapiEducationSectionDto } from "../api/dto/sections/strapi-education.dto";
 import type { Education } from "~/domain/entities/education";
 import type { StrapiProjectDto, StrapiProjectsSectionDto } from "../api/dto/sections/strapi-projects.dto";
@@ -17,6 +17,7 @@ import type { About } from "~/domain/entities/about";
 import type { StrapiHomePageDto, StrapiHomePageResponseDto } from "../api/dto/strapi-home-page.dto";
 import type { SkillColor } from "~/types/SkillColor";
 import type { WorkModality } from "~/types/WorkModality";
+import type { StrapiContactDto } from "../api/dto/sections/strapi-contact.dto";
 
 export function mapHomePageResponse(response: StrapiHomePageResponseDto): HomePage {
   return mapHomePage(response.data);
@@ -30,7 +31,16 @@ export function mapHomePage(dto: StrapiHomePageDto): HomePage {
     experience: mapExperienceSection(dto.experience),
     projects: mapProjectsSection(dto.projects),
     education: mapEducationSection(dto.education),
+    contact: mapContact(dto.contact)
   };
+}
+
+/// Strapi contact section model mapper
+function mapContact(dto: StrapiContactDto): ContactSection {
+  return {
+    title: dto.title,
+    description: dto.description
+  }
 }
 
 /// Strapi about section model mapper

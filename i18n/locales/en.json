@@ -1,4 +1,6 @@
 {
+  "loading": "Loading...",
+  "error": "Something went wrong.",
   "sections": [
     {
       "title": "About Me",
@@ -29,5 +31,13 @@
     "remote": "Remote",
     "in-person": "On-site",
     "hybrid": "Hybrid"
+  },
+  "form": {
+    "email": "Email",
+    "message": "Message",
+    "email_placeholder": "Write your email",
+    "message_placeholder": "Send me a message",
+    "submit": "Submit",
+    "success": "Your message has been sent."
   }
 }
