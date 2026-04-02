@@ -1,5 +1,15 @@
 <script setup lang="ts">
 const { data: homePage, pending, error } = useHomePage();
+
+useHead({
+  title: 'Miguel Fuentes | Software Engineer',
+  htmlAttrs: {
+    lang: 'es',
+  },
+  meta: [
+    { name: 'description', content: 'Miguel Fuentes | Software Engineer Portfolio' },
+  ],
+});
 </script>
 
 <template>
