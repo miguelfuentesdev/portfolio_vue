@@ -25,7 +25,7 @@ export function useContact() {
   }
 
   async function submit() {
-    if (!isValidForm || !isSubmitted) {
+    if (!isValidForm.value || isSubmitting.value) {
       return; 
     }
 

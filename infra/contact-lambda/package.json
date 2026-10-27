@@ -1,0 +1,9 @@
+{
+  "name": "contact-lambda",
+  "private": true,
+  "type": "module",
+  "description": "Lambda de contacto: guarda en Supabase y envía por SES",
+  "dependencies": {
+    "pg": "^8.16.3"
+  }
+}
