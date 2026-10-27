@@ -26,7 +26,9 @@ export default defineNuxtConfig({
   },
   runtimeConfig: {
     baseUrl: '',
-    supabaseContactUrl: '',
-    supabaseAnonKey: ''
+    // Lambda de contacto (SES). No son secretos: el acceso se da por OIDC de Vercel
+    contactLambdaUrl: 'https://v4gp245fg5tzdurlh4fmsjw5fu0gdsgw.lambda-url.us-west-2.on.aws/',
+    contactRoleArn: 'arn:aws:iam::020139097054:role/vercel-portfolio-contact',
+    contactAwsRegion: 'us-west-2'
   },
 })
